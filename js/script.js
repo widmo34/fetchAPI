@@ -2,12 +2,14 @@
 
 
 // two adresses first I need to send a messages to tweeter and the second to receive quote from server 
+var prefix = "https://cors-anywhere.herokuapp.com/";
+
 var tweetLink = "https://twitter.com/intent/tweet?text=";
 var quoteUrl = "https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1";
 
 
 function getQuote() {
-    fetch(quoteUrl, { cache: "no-store" })
+    fetch(prefix + quoteUrl, { cache: "no-store" })
         .then(function(resp) {
             return resp.json();
         })
